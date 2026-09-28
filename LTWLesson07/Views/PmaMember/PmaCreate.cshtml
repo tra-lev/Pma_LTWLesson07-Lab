@@ -1,0 +1,48 @@
+@model LTWLesson07.Models.PmaMember
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>PmaMember</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="PmaCreate">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="PmaUserName" class="control-label"></label>
+                <input asp-for="PmaUserName" class="form-control" />
+                <span asp-validation-for="PmaUserName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="PmaPassword" class="control-label"></label>
+                <input asp-for="PmaPassword" class="form-control" />
+                <span asp-validation-for="PmaPassword" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="PmaEmail" class="control-label"></label>
+                <input asp-for="PmaEmail" class="form-control" />
+                <span asp-validation-for="PmaEmail" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="PmaPhone" class="control-label"></label>
+                <input asp-for="PmaPhone" class="form-control" />
+                <span asp-validation-for="PmaPhone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="PmaIndex">Back to List</a>
+</div>

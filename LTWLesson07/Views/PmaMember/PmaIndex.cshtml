@@ -1,0 +1,53 @@
+@model IEnumerable<LTWLesson07.Models.PmaMember>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="PmaCreate">Tao moi</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PmaUserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PmaPassword)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PmaEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PmaPhone)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(model => item.PmaUserName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.PmaPassword)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.PmaEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.PmaPhone)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.PmaMemberId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.PmaMemberId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.PmaMemberId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
